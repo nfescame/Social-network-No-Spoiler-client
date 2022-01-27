@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../context/authContext";
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     boxShadow: "none",
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: 900,
-    color: theme.palette.background.git,
+    color: theme.palette.background.dark,
   },
 }));
 
@@ -33,14 +34,18 @@ export default function Home() {
   const { loggedInUser } = React.useContext(authContext);
   const classes = useStyles();
   const navegate = useNavigate();
+
   useEffect(() => {
     if (!loggedInUser.token) {
       navegate("/login");
     }
   }, [loggedInUser, navegate]);
+
   return (
     <>
-      <h1 className={classes.title}>home</h1>
+      <h1 style={{ margin: "5rem" }} className={classes.title}>
+        home
+      </h1>
     </>
   );
 }

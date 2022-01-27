@@ -30,9 +30,8 @@ function App() {
       primary: blue,
       secondary: blueGrey,
       background: {
-        git: !darkMode ? "#232323" : "#fff",
         dark: darkMode ? "#303030" : "#e5e5e5e5",
-        paper: darkMode ? "#232323" : "#fff",
+        paper: !darkMode ? "#232323" : "#fff",
       },
     },
   });

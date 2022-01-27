@@ -43,7 +43,6 @@ export default function LoginComponent() {
         "http://localhost:1234/api/login",
         state
       );
-      console.log(response);
       setLoggedInUser({ ...response.data });
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
@@ -128,7 +127,7 @@ export default function LoginComponent() {
               </Button>
               <Grid container>
                 <Grid item>
-                  <Link href='#' variant='body2'>
+                  <Link href='/signup' variant='body2'>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
